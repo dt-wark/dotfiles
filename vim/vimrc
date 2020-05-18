@@ -1,0 +1,80 @@
+" Scheme settings
+colorscheme nord
+hi Normal guibg=NONE ctermbg=NONE
+hi MatchParen cterm=bold ctermbg=black ctermfg=darkgreen
+set number relativenumber
+set t_Co=256
+
+" Syntax settings
+syntax on
+let python_highlight_all = 1
+
+" Search settings
+set showmatch
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+
+" Tabs, indent settings
+set tabstop=4
+set shiftwidth=4
+set showtabline=1
+set smarttab
+set expandtab
+set autoindent
+set wrap
+set linebreak
+set textwidth=80
+
+" Enables smartindent after keywords in Python files
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+" Enables smartbackspace
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+
+" Disables automatic commenting on new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Splits open at the bottom and right
+set splitbelow splitright
+
+" Shortcutting split navigation, saving a keypress
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <c-l> <C-w>l
+
+" New tab is aliased to Ctrl+t
+nnoremap <silent> <C-t> :tabnew<CR>
+
+" Set default clipboard to the system clipboard
+set clipboard=unnamedplus
+
+" Past from system clipboard with ctrl+i instead of shift+insert
+map <S-Insert> <C-i>
+map! <S-Insert> <C-i>
+
+" Automatically deletes all trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
+
+" Global replace is aliased to S
+nnoremap S :%s//g<Left><Left>
+
+" Enables spellchecker
+map <F5> :setlocal spell! spelllang=en_us,ru_yo<CR>
+
+" File settings
+set encoding=utf-8
+set fileencodings=utf-8,cp1251
+set fileformat=unix
+
+" Disables backups and swap files
+set nobackup
+set noswapfile
+
+" Other VIM shiiit
+set nocompatible
+set undolevels=1000
+set termencoding=utf-8
+
