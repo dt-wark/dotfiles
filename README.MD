@@ -6,7 +6,7 @@
 ### Preinstall
 
 ```
-cd ~/tmp/
+cd /tmp/
 git clone https://github.com/dt-wark/dotfiles.git
 cd dotfiles
 ```
