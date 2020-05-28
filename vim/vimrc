@@ -1,13 +1,41 @@
+" Vundle settings
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" Github plugins
+Plugin 'preservim/nerdtree'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 " Scheme settings
-colorscheme nord
-hi Normal guibg=NONE ctermbg=NONE
-hi MatchParen cterm=bold ctermbg=black ctermfg=darkgreen
-set number relativenumber
+syntax on
+
+" For Vim 7
 set t_Co=256
 
-" Syntax settings
-syntax on
+" For Vim 8
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+
+hi Normal guibg=NONE ctermbg=NONE
+hi MatchParen cterm=bold ctermbg=black ctermfg=darkgreen
+
 let python_highlight_all = 1
+
+colorscheme OceanicNext
 
 " Search settings
 set showmatch
@@ -31,7 +59,7 @@ set textwidth=80
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 
 " Enables smartbackspace
-set backspace=indent,eol,start whichwrap+=<,>,[,]
+set backspace=indent,eol,start
 
 " Disables automatic commenting on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
@@ -74,7 +102,7 @@ set nobackup
 set noswapfile
 
 " Other VIM shiiit
-set nocompatible
+set number relativenumber
 set undolevels=1000
 set termencoding=utf-8
 
