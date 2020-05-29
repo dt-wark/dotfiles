@@ -1,0 +1,6 @@
+# pfetch
+export PF_INFO="ascii os kernel uptime shell pkgs memory"
+export SHELL="zsh"
+
+# gpg
+export GPG_TTY=$(tty)

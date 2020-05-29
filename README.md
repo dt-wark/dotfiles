@@ -1,16 +1,56 @@
-# warkentin's dotfiles
+# First steps
 
-[TODO!:pic]
-
-## First steps
-
-We need to clone this repository to the temporary directory /tmp/
+You need to clone this repository and go to the /tmp/ directory
 
 ```
 git clone https://github.com/dt-wark/dotfiles.git /tmp/ && cd /tmp/dotfiles
 ```
 
-## Vim
+# Shell (ZSH)
+
+- **Theme**: [**`gentoo`**](https://github.com/ohmyzsh/ohmyzsh/blob/master/themes/gentoo.zsh-theme)
+- **Installed plug-ins**: [**`colored-man-pages`**](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages) [**`zsh-autosuggestions`**](https://github.com/zsh-users/zsh-autosuggestions) [**`zsh-syntax-highlighting`**](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+![zsh screenshot](https://res.cloudinary.com/wark/image/upload/v1590752586/zsh.png)
+
+
+### Let's install zsh and change the standard shell
+
+##### Step by step
+
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install zsh
+sudo apt-get install powerline fonts-powerline
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+mv shell/zshrc ~/.zshrc
+chsh -s /usr/bin/zsh
+```
+
+##### Or one line
+
+```sudo apt update -y && sudo apt upgrade && sudo apt install zsh -y && sudo apt-get install powerline fonts-powerline -y && git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && mv shell/zshrc ~/.zshrc && chsh -s /usr/bin/zsh```
+
+
+### Aliases and virtual environment variables
+
+```
+mv shell/shell_aliases ~/.shell_aliases
+mv shell/shell_env ~/.shell_env
+```
+
+### pfetch
+pfetch is configured via [environment variables](https://github.com/dylanaraps/pfetch#configuration)
+a couple of variables are already set in `.shell_env`
+```
+git clone https://github.com/dylanaraps/pfetch.git
+sudo install pfetch/pfetch /usr/local/bin/
+```
+
+
+# Vim
+
 - **Theme**: [**`Oceanic Next`**](https://github.com/mhartington/oceanic-next)
 - **Plugin Manager**: [**`Vundle`**](https://github.com/VundleVim/Vundle.vim)
 - **Installed plug-ins**: [**`nerdtree`**](https://github.com/preservim/nerdtree)

@@ -1,0 +1,6 @@
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vi="vim"
+alias nvim="vim"
+alias cls="clear"
+
