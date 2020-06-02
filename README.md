@@ -20,7 +20,7 @@ git clone https://github.com/dt-wark/dotfiles.git /tmp/ && cd /tmp/dotfiles
 
 ```
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 sudo apt install zsh
 sudo apt-get install powerline fonts-powerline
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -30,7 +30,7 @@ chsh -s /usr/bin/zsh
 
 ##### Or one line
 
-```sudo apt update -y && sudo apt upgrade && sudo apt install zsh -y && sudo apt-get install powerline fonts-powerline -y && git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && mv shell/zshrc ~/.zshrc && chsh -s /usr/bin/zsh```
+```sudo apt update && sudo apt upgrade -y && sudo apt install zsh -y && sudo apt-get install powerline fonts-powerline -y && git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && mv shell/zshrc ~/.zshrc && chsh -s /usr/bin/zsh```
 
 
 ### Aliases and virtual environment variables
