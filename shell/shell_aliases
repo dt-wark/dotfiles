@@ -1,6 +1,18 @@
+# zsh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+
+# vim
 alias vi="vim"
 alias nvim="vim"
-alias cls="clear"
 
+# utils
+alias pt="bpytop"
+alias lsh="ls -lhA --group-directories-first"
+alias pbcopy="xclip -selection clipboard"
+alias pbpaste="xclip -selection clipboard -o"
+
+# windows-like staff
+alias cls="clear"
+alias cks="clear"
+alias сды="clear"

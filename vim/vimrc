@@ -10,7 +10,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Github plugins
-Plugin 'preservim/nerdtree'
+Plugin 'vim-scripts/The-NERD-tree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -61,11 +65,24 @@ autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,
 " Enables smartbackspace
 set backspace=indent,eol,start
 
+" Disable autoindent when pasting text
+" https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+function! XTermPasteBegin()
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
 " Disables automatic commenting on new line
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Splits open at the bottom and right
-set splitbelow splitright
+set splitright
 
 " Shortcutting split navigation, saving a keypress
 map <C-h> <C-w>h
@@ -75,6 +92,9 @@ map <c-l> <C-w>l
 
 " New tab is aliased to Ctrl+t
 nnoremap <silent> <C-t> :tabnew<CR>
+
+" Tag list
+map <leader>t :TagbarToggle<CR>
 
 " Set default clipboard to the system clipboard
 set clipboard=unnamedplus
@@ -89,8 +109,29 @@ autocmd BufWritePre * %s/\s\+$//e
 " Global replace is aliased to S
 nnoremap S :%s//g<Left><Left>
 
+" Indent/unindent with tab/shift-tab
+nmap <Tab> >>
+imap <S-Tab> <Esc><<i
+nmap <S-tab> <<
+
 " Enables spellchecker
 map <F5> :setlocal spell! spelllang=en_us,ru_yo<CR>
+
+" File browser
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
+let NERDTreeMinimalUI = 1
+let g:nerdtree_open = 0
+map <leader>n :call NERDTreeToggle()<CR>
+function NERDTreeToggle()
+    NERDTree
+    if g:nerdtree_open == 1
+        let g:nerdtree_open = 0
+    else
+        let g:nerdtree_open = 1
+        wincmd p
+    endif
+endfunction
+
 
 " File settings
 set encoding=utf-8

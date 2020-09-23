@@ -29,9 +29,10 @@ HIST_IGNORE_SPACE="true"
 plugins=(colored-man-pages zsh-autosuggestions zsh-syntax-highlighting)
 
 # User configuration
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin:$HOME/.cargo/bin"
 
  #Custom things
 source $ZSH/oh-my-zsh.sh
+source $HOME/.cargo/env
 source $HOME/.shell_env
 source $HOME/.shell_aliases
