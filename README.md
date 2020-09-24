@@ -24,13 +24,15 @@ sudo apt upgrade -y
 sudo apt install zsh
 sudo apt-get install powerline fonts-powerline
 git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 mv shell/zshrc ~/.zshrc
 chsh -s /usr/bin/zsh
 ```
 
 ##### Or one line
 
-```sudo apt update && sudo apt upgrade -y && sudo apt install zsh -y && sudo apt-get install powerline fonts-powerline -y && git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && mv shell/zshrc ~/.zshrc && chsh -s /usr/bin/zsh```
+```sudo apt update && sudo apt upgrade -y && sudo apt install zsh -y && sudo apt-get install powerline fonts-powerline -y && git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && mv shell/zshrc ~/.zshrc && chsh -s /usr/bin/zsh```
 
 
 ### Aliases and virtual environment variables
