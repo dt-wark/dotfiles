@@ -3,7 +3,7 @@
 You need to clone this repository and go to the /tmp/ directory
 
 ```
-git clone https://github.com/dt-wark/dotfiles.git /tmp/ && cd /tmp/dotfiles
+git clone https://github.com/dt-wark/dotfiles.git /tmp/dotfiles && cd /tmp/dotfiles
 ```
 
 # Shell (ZSH)
