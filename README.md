@@ -36,6 +36,7 @@ chsh -s /usr/bin/zsh
 ### Aliases and virtual environment variables
 
 ```
+cd /tmp/dotfiles
 mv shell/shell_aliases ~/.shell_aliases
 mv shell/shell_env ~/.shell_env
 ```
